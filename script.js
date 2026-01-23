@@ -18,7 +18,58 @@ let ports = [20, 43, 80, 443, 543, 353, 6539];
 let serveurs = ["8.8.8.8", "1.1.1.1", "208.67.222.222", "192.168.1.1", "10.0.0.1"];
 let totalServeurs = 0;
 
+const MainTitle = document.getElementById('main-title');
+const classe = document.getElementsByClassName('texte');
+const tableau = document.querySelectorAll('container');
+const titrePrincipal = document.querySelector('ajouter'); 
+const btnClick = document.querySelector("#btnClick")
+const inputTxT = document.querySelector("#inputTxT")
+const resultat = document.querySelector("#resultat")
+const titre = document.getElementById('titre');
+const zone = document.getElementById('zone');
+const btnAjouter = document.querySelector('#add');
+const btnSupprimer = document.querySelector('#add');
+
 // Affichage des variables
+
+btnClick.addEventListener('click', () => {
+    console.log("Bouton cliqué !")
+})
+
+inputTxT.addEventListener('input', (e) => {
+    resultat.textContent = e.target.value
+})
+
+btnClick.addEventListener('mouseenter', () => {
+    btnClick.style.backgroundColor = '#28a745'
+})
+
+btnClick.addEventListener('mouseleave', () => {
+    btnClick.style.backgroundColor = '#28a74600'
+})
+
+  titre.textContent = "Nouveau Titre !"
+   zone.innerHTML =
+   `
+   <ul>
+     <li>Élément 1</li>
+     <li>Élément 2</li>
+     <li>Élément 3</li>
+   </ul>
+   `
+
+btnAjouter.addEventListener('click', () => {
+    const p = document.createElement('p');
+    p.textContent = "Paragraphe ajouté";
+    zone.appendChild(p);
+})
+
+btnSupprimer.addEventListener('click', () => {
+    const paragraphes = zone.querySelectorAll('p')
+    if (paragraphes.length > 0) {
+        paragraphes[paragraphes.length - 1].remove();
+    }
+})
 
 console.log("Nom de l'équipement : " + nomEquipement);
 console.log("Nombre de port : " + nombrePorts);
@@ -73,5 +124,12 @@ for (let i = 0; i < serveurs.length; i++) {
     totalServeurs++;
     console.log("Total serveurs : " + totalServeurs);
 } 
+
+console.log(MainTitle);
+console.log(classe);
+console.log(tableau);
+
+
+
 
 // Fin du script.js
