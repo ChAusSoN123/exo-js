@@ -1,0 +1,114 @@
+
+header {
+    background-color: rgb(10, 55, 204);
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+    padding : 0 35px;
+}
+li {
+    list-style-type: none;
+    text-decoration: none;
+
+}
+
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+#main-article {
+    margin: 50px;
+    background-color: rgb(0, 0, 0);
+    color : rgb(255, 255, 255);
+    padding: 25px;
+    border: 2px solid black;
+    border-radius: 15px;
+    width : 350px;
+}
+
+.button {
+    background-color: rgb(10, 55, 204);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#main-article2 {
+    margin: 50px;
+    background-color: rgb(175, 0, 0);
+    color : rgb(255, 255, 255);
+    padding: 25px;
+    border: 2px solid rgba(156, 0, 0, 0);
+    border-radius: 15px;
+    width : 350px;
+}
+
+#main-article3 {
+    margin: 50px;
+    background-color: rgb(255, 0, 0);
+    color : rgb(255, 255, 255);
+    padding: 25px;
+    border: 2px solid black;
+    border-radius: 15px;
+    width : 350px;
+}
+
+/* Section Code cadeaux */
+#code-cadeaux {
+    margin: 50px;
+    padding: 25px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#code-cadeaux h2 {
+    color: #333;
+}
+
+#code-input {
+    padding: 10px;
+    font-size: 18px;
+    width: 300px;
+    margin: 10px 0;
+}
+
+#submit-code {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#submit-code:hover {
+    background-color: #0056b3;
+}
+
+#error-message {
+    font-weight: bold;
+    color: red;
+}
+
+#reward-message {
+    font-weight: bold;
+    color: green;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    border: 2px solid red;
+}

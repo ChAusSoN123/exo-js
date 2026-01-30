@@ -21,55 +21,9 @@ let totalServeurs = 0;
 const MainTitle = document.getElementById('main-title');
 const classe = document.getElementsByClassName('texte');
 const tableau = document.querySelectorAll('container');
-const titrePrincipal = document.querySelector('ajouter'); 
-const btnClick = document.querySelector("#btnClick")
-const inputTxT = document.querySelector("#inputTxT")
-const resultat = document.querySelector("#resultat")
-const titre = document.getElementById('titre');
-const zone = document.getElementById('zone');
-const btnAjouter = document.querySelector('#add');
-const btnSupprimer = document.querySelector('#add');
+const titrePrincipal = document.querySelector('ajouter');
 
 // Affichage des variables
-
-btnClick.addEventListener('click', () => {
-    console.log("Bouton cliqué !")
-})
-
-inputTxT.addEventListener('input', (e) => {
-    resultat.textContent = e.target.value
-})
-
-btnClick.addEventListener('mouseenter', () => {
-    btnClick.style.backgroundColor = '#28a745'
-})
-
-btnClick.addEventListener('mouseleave', () => {
-    btnClick.style.backgroundColor = '#28a74600'
-})
-
-  titre.textContent = "Nouveau Titre !"
-   zone.innerHTML =
-   `
-   <ul>
-     <li>Élément 1</li>
-     <li>Élément 2</li>
-     <li>Élément 3</li>
-   </ul>
-   `
-
-btnAjouter.addEventListener('click', () => {
-    const p = document.createElement('p');
-    p.textContent = "Paragraphe ajouté";
-    zone.appendChild(p);
-})
-
-btnSupprimer.addEventListener('click', () => {
-    const paragraphes = zone.querySelectorAll('p')
-    if (paragraphes.length > 0) {
-        paragraphes[paragraphes.length - 1].remove();
-    }
-})
 
 console.log("Nom de l'équipement : " + nomEquipement);
 console.log("Nombre de port : " + nombrePorts);
@@ -129,7 +83,54 @@ console.log(MainTitle);
 console.log(classe);
 console.log(tableau);
 
+// Gestion de la publicité
+const adModal = document.getElementById('ad-modal');
+const ignoreBtn = document.getElementById('ignore-btn');
 
+// Sélectionner tous les boutons dans les articles
+const articleButtons = document.querySelectorAll('article button');
 
+articleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Afficher le modal
+        adModal.style.display = 'flex';
+        
+        // Masquer le bouton ignorer initialement
+        ignoreBtn.style.display = 'none';
+        
+        // Après 5 secondes, afficher le bouton ignorer
+        setTimeout(() => {
+            ignoreBtn.style.display = 'block';
+        }, 5000);
+    });
+});
+
+// Fermer le modal en cliquant sur ignorer
+ignoreBtn.addEventListener('click', () => {
+    adModal.style.display = 'none';
+});
+
+// Empêcher la fermeture en cliquant ailleurs (pas de swipe, mais pour desktop, empêcher clic sur overlay)
+adModal.addEventListener('click', (e) => {
+    if (e.target === adModal) {
+        // Ne rien faire, pour empêcher la fermeture avant 5 sec
+    }
+});
+
+// Gestion du code cadeau
+const codeInput = document.getElementById('code-input');
+const rewardMessage = document.getElementById('reward-message');
+const errorMessage = document.getElementById('error-message');
+const submitCodeBtn = document.getElementById('submit-code');
+
+submitCodeBtn.addEventListener('click', () => {
+    if (codeInput.value === 'Vive-israel') {
+        rewardMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+    } else {
+        rewardMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+    }
+});
 
 // Fin du script.js

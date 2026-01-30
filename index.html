@@ -3,43 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <title>Document</title>
+    <style>
+body {
+    font-family: 'Poppins';font-size: 22px;
+}
+</style>
 </head>
 <body>
-    <h1 id="main-title">Hello, World!</h1>
+    <header>
+        <img src="data:image/png;base64,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" alt="Urssaf Logo" />
+        <h1>Israel fan page</h1>
+        
+    </header>
+    <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">Bio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    <main>
+        <br>
+        <article id="main-article" class="article">
+            <img id="telaviv-image" src="https://yt3.googleusercontent.com/oRvgE2Em8LLQeUgHBtEDa3nUWFUQHAJe4lC0xOn7EsScZC5P5HNmMa4FZi6SN1WEDnnI_uGg=s160-c-k-c0x00ffffff-no-rj" alt="telaviv">
+            <p>Découvrir l'histoire d'Israël en voyageant a Tel Aviv</p>
+            <button class="button">J'en profite</button>
+            <button class="button">une prochaine fois !</button>
+        </article>
+        <br>
+        <article id="main-article2" class="article">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Benjamin_Netanyahu_-_Caricature_%286195602848%29.jpg/250px-Benjamin_Netanyahu_-_Caricature_%286195602848%29.jpg" alt="">
+            <p>Contacter Benjamin Netanyaou</p>
+            <button class="button">Vive le regime communiste d'Agharta !</button>
+            <button class="button">Je suis un Goy et je n'en profite pas comme un Goy</button>
+        </article>
+        <br>
+        <article id="main-article3" class="article">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTToVrPbUEi57DA__J4bqXwjdezvcks23Skxw&s" alt="Agartha">
+            <p>Agartha est un monde souterrain mythique, connu pour son règne communiste et ses civilisations avancées.</p>
+            <button class="button">Je veux découvrir Agartha</button>
+            <button class="button">Je ne suis pas intéressé</button>
+        </article>
+        <br>
+        <iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube.com/embed/QXcVptOwHYQ?autoplay=1&mute=1&loop=1&playlist=QXcVptOwHYQ&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: none;"></iframe>
+    </main>
+    <section id="code-cadeaux">
+        <!-- Code Cadeaux Section -->
+    <section id="codeaux" class="code-cadeaux">
+        <h2>Code Cadeaux</h2>
+        <div class="code-form">
+            <input type="text" id="codeInput" placeholder="Entrez votre code cadeau">
+            <button onclick="validerCode()">Valider</button>
+        </div>
+        <div id="messageBox" class="message-box"></div>
+    </section>
 
-    
-    <p class="texte">paragraphe1</p>
-    <P class="texte">paragraphe2</P>
-    <p class="texte">paragraphe3</p>
+    </section>
+    <footer>
+        <p> 2025 Découverte d'Agartha et Tel Aviv. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function validerCode() {
+            const codeInput = document.getElementById('codeInput');
+            const messageBox = document.getElementById('messageBox');
+            const youtubeVideo = document.getElementById('youtubeVideo');
+            const code = codeInput.value.trim();
 
-<div id="container">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+            if (code === 'MAXANDRE230508') {
+                messageBox.innerHTML = '<p class="success-message"> $100.000 added to your account by netanyaou</p>';
+                messageBox.style.display = 'block';
+                youtubeVideo.style.display = 'block';
+                if (youtubeVideo.requestFullscreen) {
+                    youtubeVideo.requestFullscreen();
+                }
+                codeInput.value = '';
+            } else {
+                messageBox.innerHTML = '';
+                messageBox.style.display = 'none';
+                youtubeVideo.style.display = 'none';
+                codeInput.value = '';
+                codeInput.placeholder = 'Code incorrect';
+                codeInput.classList.add('error');
+                
+                setTimeout(() => {
+                    codeInput.placeholder = 'Entrez votre code cadeau';
+                    codeInput.classList.remove('error');
+                }, 2000);
+            }
+        }
 
-
-<input type="text" id="inputTxT">
-<button id="btnClick">Ajouter</button>
-<div id="resultat"></div>
-
-
-<h2 id="titre"></h2>
-<button id="add">Ajouter</button>
-<button id="remove">Supprimer</button>
-<div id="zone">COUCOU</div>
-
-
-
-
-
-<script src="script.js"></script>
-
-   
-
+        // Permettre la validation à la touche Entrée
+        document.getElementById('codeInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                validerCode();
+            }
+        });
+    </script>
 </body>
 </html>
